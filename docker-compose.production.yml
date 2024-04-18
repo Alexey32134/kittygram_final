@@ -14,7 +14,7 @@ services:
   backend:
     image: podolskyleha26254/kittygram_backend
     depends_on:
-      -db
+      - db
     env_file: .env
     volumes:
       - static:/backend_static
@@ -28,8 +28,8 @@ services:
   gateway:
     image: podolskyleha26254/kittygram_gateway
     depends_on:
-      -backend
-      -frontend
+      - backend
+      - frontend
     env_file: .env
     ports:
       - 9000:80
