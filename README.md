@@ -73,3 +73,18 @@ Javascript
 ```
 React
 ```
+
+<h1>Переменные окружения .env</h1>
+<h2>для postgres</h2>
+POSTGRES_DB
+POSTGRES_USER
+POSTGRES_PASSWORD
+DB_NAME
+DB_HOST
+DB_PORT
+<h2>для settings</h2>
+DEBUG
+ALLOWED_HOSTS
+
+<h2>Проект разворачивается в контейнерах</h2>
+Для локального запуска используйте: docker compose up
