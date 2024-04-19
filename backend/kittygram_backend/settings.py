@@ -15,8 +15,8 @@ if os.getenv('DEBUG', default='False').lower == 'true':
     DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default='').split()
-#ALLOWED_HOSTS = ['51.250.104.145', '127.0.0.1', 'localhost', 'kittygramyp.space']
+#ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default='').split()
+ALLOWED_HOSTS = ['51.250.104.145', '127.0.0.1', 'localhost', 'kittygramyp.space']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
