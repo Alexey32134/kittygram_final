@@ -97,4 +97,8 @@ DB_HOST - адрес, по которому Django будет соединять
 DB_PORT - порт, по которому Django будет обращаться к базе данных.<br>
 <h2>для settings</h2><br>
 DEBUG - Режим разработки(True/False),<br>
+<<<<<<< HEAD
 ALLOWED_HOSTS - по умолчанию ['localhost', '127.0.0.1']
+=======
+ALLOWED_HOSTS - по умолчанию ['localhost', '127.0.0.1']
+>>>>>>> 73cf498ef38c71721ac3a27a52a7d3c9467bb84f
