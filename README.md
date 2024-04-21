@@ -59,11 +59,15 @@ python3 manage.py runserver
 
 <h2>Проект разворачивается в контейнерах</h2>
 Команда docker compose -f docker-compose.production.yml up -
-разворачивает 4 контейнера:
-- backend
-- frontend
-- gateway
-- postgres
+разворачивает 4 контейнера:<br>
+- backend<br>
+- frontend<br>
+- gateway<br>
+- postgres<br>
+Далее нужно выполнить миграции и собрать статику:<br>
+- docker compose -f docker-compose.production.yml exec backend python manage.py migrate<br>
+- docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic<br>
+- docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /backend_static/static/
 
 
 <h1>Стек использованных технологий:</h1>
@@ -86,11 +90,11 @@ React
 
 <h1>Переменные окружения .env</h1>
 <h2>для postgres</h2>
-POSTGRES_DB - название базы данных (необязательная переменная, по умолчанию совпадает с POSTGRES_USER),
-POSTGRES_USER - имя пользователя БД (необязательная переменная, значение по умолчанию — postgres),
-POSTGRES_PASSWORD - пароль пользователя БД (обязательная переменная для создания БД в контейнере),
-DB_HOST - адрес, по которому Django будет соединяться с базой данных.,
-DB_PORT - порт, по которому Django будет обращаться к базе данных.
-<h2>для settings</h2>
-DEBUG - Режим разработки(True/False),
+POSTGRES_DB - название базы данных (необязательная переменная, по умолчанию совпадает с POSTGRES_USER),<br>
+POSTGRES_USER - имя пользователя БД (необязательная переменная, значение по умолчанию — postgres),<br>
+POSTGRES_PASSWORD - пароль пользователя БД (обязательная переменная для создания БД в контейнере),<br>
+DB_HOST - адрес, по которому Django будет соединяться с базой данных.,<br>
+DB_PORT - порт, по которому Django будет обращаться к базе данных.<br>
+<h2>для settings</h2><br>
+DEBUG - Режим разработки(True/False),<br>
 ALLOWED_HOSTS - по умолчанию ['localhost', '127.0.0.1']
